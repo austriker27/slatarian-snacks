@@ -9,9 +9,9 @@
 <body>
     <h1>Slatarian Snacks</h1>
     <ul>
-        <?php foreach ($snacks as $snack) : ?>
-            <li><?=$task; ?></li>
-        <?php endforeach; ?>
+        @foreach ($snacks as $snack)
+            <li>{{ $snack }}</li>
+        @endforeach
     
     </ul>
 </body>
