@@ -17,5 +17,11 @@
                 "NothingWorks\\LaravelPreset\\PresetServiceProvider"
             ]
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/adamwathan/laravel-preset"
+        }
+    ]
 }
