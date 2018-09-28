@@ -11,6 +11,7 @@
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
+        "adamwathan/laravel-preset": "dev-master",
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
@@ -55,6 +56,12 @@
         "sort-packages": true,
         "optimize-autoloader": true
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/adamwathan/laravel-preset"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
