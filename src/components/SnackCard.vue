@@ -12,7 +12,7 @@
       <div></div>
       <div class="w-1/3 flex flex-col p-4">
         <div class="text-indigo-darker font-bold font-sans text-xl mb-2">{{ title }}</div>
-        <p class="text-indigo text-sm font-sans">{{ description }}</p>
+        <p class="text-indigo text-sm font-sans">{{ title }}</p>
       </div>
       <div class="flex flex-col items-center content-center self-center align-middle p-4">
         <div class>
