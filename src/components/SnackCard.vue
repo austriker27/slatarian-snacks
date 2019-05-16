@@ -8,11 +8,11 @@
         src="https://nuts.com/images/auto/801x534/assets/8ba593eb1bec237d.jpg"
         alt="Gummy Bears"
       />-->
-      <g-image class="h-full max-w-sm" :src="snack.image.url" alt="Gummy Bears"/>
+      <g-image class="h-full max-w-sm" :src="image.file.url" alt="Gummy Bears"/>
       <div></div>
       <div class="w-1/3 flex flex-col p-4">
-        <div class="text-indigo-darker font-bold font-sans text-xl mb-2">{{ snack.title }}</div>
-        <p class="text-indigo text-sm font-sans">{{ snack.description }}</p>
+        <div class="text-indigo-darker font-bold font-sans text-xl mb-2">{{ title }}</div>
+        <p class="text-indigo text-sm font-sans">{{ description }}</p>
       </div>
       <div class="flex flex-col items-center content-center self-center align-middle p-4">
         <div class>
@@ -41,3 +41,24 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "SnackCard",
+  props: {
+    title: {
+      type: String,
+    },
+    votes: {
+      type: Number,
+    },
+    image: {
+      type: Object,
+    }
+  },
+};
+</script>
+
+<style lang="scss">
+
+</style>

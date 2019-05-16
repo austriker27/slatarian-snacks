@@ -76,7 +76,7 @@ module.exports = {
         space: process.env.CONTENTFUL_SPACE_ID, // required
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN, // required
         host: 'cdn.contentful.com',
-        environment: 'master',
+        environment: process.env.CONTENTFUL_ENVIRONMENT,
         typeName: 'Contentful'
       }
     }

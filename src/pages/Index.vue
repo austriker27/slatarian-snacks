@@ -18,7 +18,15 @@
       </div>
     </div>
 
-    <SnackCard v-for="edge in $page.allSnacks.edges" :key="edge.node._id"/>
+    <div v-for="edge in $page.snacks.edges" :key="edge.node.id">{{edge.node.title}}</div>
+
+    <SnackCard 
+      v-for="edge in $page.snacks.edges" 
+      :key="edge.node.id" 
+      :title="edge.node.title"
+      :votes="edge.node.votes" 
+      :image="edge.node.image"
+      />
 
     <p class="home-links">
       <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
@@ -28,14 +36,11 @@
 </template>
 
 <page-query>
-query Snacks {
-  allSnacks(sortBy: "votes", order: DESC) {
+query AllTheSnacks {
+  snacks: allContentfulSnack {
     edges {
       node {
-        _id 
         title
-        description
-        categories
         votes
         image {
           file {
@@ -54,7 +59,7 @@ import SnackCard from "@/components/SnackCard";
 
 export default {
   metaInfo: {
-    title: "Hello, world!"
+    title: "Slatarian Snacks"
   },
   components: {
     SnackCard
