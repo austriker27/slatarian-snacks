@@ -67,5 +67,18 @@ module.exports = {
     //     .use('vue-svg-inline-loader')
     //     .loader('vue-svg-inline-loader')
     //     .options({ /* ... */ })
-  }
+  },
+
+  plugins: [
+    {
+      use: '@gridsome/source-contentful',
+      options: {
+        space: process.env.CONTENTFUL_SPACE_ID, // required
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN, // required
+        host: 'cdn.contentful.com',
+        environment: 'master',
+        typeName: 'Contentful'
+      }
+    }
+  ]
 };

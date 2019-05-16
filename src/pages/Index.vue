@@ -1,11 +1,24 @@
 <template>
   <Layout>
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135"/>
+    <div class="bg-indigo-500 h-8 w-full">
+      <div class="flex justify-center">
+        <img class="h-4 text-center align-middle" src="../assets/svg/indigo-slate-white.svg" alt>
+      </div>
+    </div>
+    <div class="my-16 w-5/6">
+      <!-- <h1 class="mb-4">{{ msg }}</h1> -->
+      <!-- eslint-disable-next-line -->
+      <div class="border-4 round border-indigo-500 p-16">
+        <h1
+          class="text-center font-lazer tracking-wide text-5xl gradient-font mb-8"
+        >Slatarian Snacks</h1>
+        <h4
+          class="text-indigo-500 text-center uppercase tracking-wide text-base"
+        >Vote for your favorite snacks.</h4>
+      </div>
+    </div>
 
-    <h1 class="bg-black">Hello, world!</h1>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores</p>
+    <SnackCard v-for="edge in $page.allSnacks.edges" :key="edge.node._id"/>
 
     <p class="home-links">
       <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
@@ -14,10 +27,37 @@
   </Layout>
 </template>
 
+<page-query>
+query Snacks {
+  allSnacks(sortBy: "votes", order: DESC) {
+    edges {
+      node {
+        _id 
+        title
+        description
+        categories
+        votes
+        image {
+          file {
+            url
+          }
+        }
+      }
+    }
+  }
+}
+</page-query>
+
+
 <script>
+import SnackCard from "@/components/SnackCard";
+
 export default {
   metaInfo: {
     title: "Hello, world!"
+  },
+  components: {
+    SnackCard
   }
 };
 </script>
